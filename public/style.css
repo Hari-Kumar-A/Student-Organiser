@@ -1,0 +1,186 @@
+html,body{
+    height: 100%;
+}
+.content{
+    display: flex;
+    height: 100%;
+}
+.header{
+    display: flex;
+    margin-top: 0;
+    background-color: #4287f5;;
+    align-items: center;
+    height: 50px;
+    justify-content: space-around;
+    gap:60px;
+    /* border-bottom: 2px dotted darkblue; */
+}
+.logout{
+font-size: 1.5rem;
+}
+.header .main-head{
+    /* background-color: black; */
+    margin-left: 130px;
+    font-size: 2rem;
+    color:darkblue;
+    padding-left: 10px;
+    border-left: 4px solid darkblue;
+}
+ .searchinput{
+    width: 300px;
+ }
+.sidebar{
+    display: flex;
+    padding-top: 10px;
+   gap:10px;
+    flex-direction: column;
+    /* align-items: center; */
+    font-size: 1.2rem;
+    background-color: #4287f5;
+    border-right: 1px solid darkblue;
+    /* border: 2px solid black; */
+    width:160px;
+}
+.sidebarcompo{
+     
+    /* text-align: center; */
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px;
+    background-color: white;
+     border: 2px solid darkblue;
+}
+.sidebarcompo a{
+    padding: 5px;
+}
+
+.sidebarcompo:hover{
+    /* padding: 5px; */
+    background-color:rgb(160, 188, 205)
+}
+.dashboard{
+    display: flex;
+    /* border: 2px solid black; */
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid lightblue;
+    width: 100%;
+    justify-content: space-between;
+    /* flex-wrap: nowrap; */
+}
+.dashboard .heading{
+    font-size: 1.5rem;
+    /* padding-left: 10px; */
+}
+.covering{
+    padding-left: 10px;
+    width: 100%;
+}
+.assignmentform{
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.assignmentform .form-details{
+    font-size: 1rem;
+}
+#course{
+    margin-left: 57px;
+}
+#assignment{
+    width: 600px;
+    height: 80px;
+    margin-left: 10px;
+}
+#date{
+    margin-left: 32px;
+}
+.details{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.submit{
+    background-color: rgb(103, 103, 121);
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+}
+#addsubmit{
+    background-color: #4287f5;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #addsubmit:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(0.9);
+  }
+.assignmenttable{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  
+    border: 2px solid black;
+}
+table {
+    border-collapse: collapse;
+    border-spacing:  15px;
+  }
+  
+  th {
+    background-color: #4287f5;
+    color: white;
+  }
+  
+  th,
+  td {
+    width: 350px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+    gap:9px;
+  }
+  .dotcovering{
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px dotted black;
+    width: fit-content;
+    padding: 20px;
+    background-color: #4287f5;
+    color: white;
+  }
+  #updatesubmit{
+    background-color: #4287f5;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #updatesubmit:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(0.9);
+  }
+  #deletesubmit{
+    background-color:rgb(229, 58, 58);
+    color: wheat;
+    cursor: pointer;
+    transition: 0.5s;
+     
+  }
+  
+  #deletesubmit:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(0.9);
+    
+  }

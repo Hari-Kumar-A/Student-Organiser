@@ -1,0 +1,33 @@
+<div class="covering">
+
+<div class="dashboard">
+    <div class="heading">New Assignment</div>
+</div>
+
+<div class="link"> <a href="/">Dashboard</a> / <a href="/assignments">Assignments</a> / New Assignment</div>
+
+<form action="assignment" method="post" class="assignmentform">
+    <div class="details">
+       <label for="course">Course :</label>
+       <input type="text" class="form-details" id="course" name="course" placeholder="Enter The Course Name"
+       required>
+    </div>
+
+    <div class="details">
+        <label for="assignment">Assignment :</label>
+        <textarea name="assignment" id="assignment" cols="30" rows="10"></textarea>
+     </div>
+
+     <div class="details">
+        <label for="duedate">Due Date :</label>
+        <input type="date" class="form-details" id="date" name="duedate" placeholder="Enter The Due Date"
+        required>
+     </div>
+
+     <div class="details">
+        <button type="submit" class="submit" id="addsubmit"> Add Assignment</button>
+     </div>
+</form>
+
+</div>
+

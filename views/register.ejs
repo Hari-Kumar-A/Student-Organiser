@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/authentication.css">
+</head>
+<body>
+    
+    <%- include('./partials/headerauthentication') %>
+
+<h1>Register</h1>
+
+ 
+
+    
+   
+    
+    <form action="register" method="post" class="assignmentform">
+        <div class="details">
+           <label for="Full Name">Full Name :</label>
+           <input type="text" class="form-details" id="Full Name" name="fullname" placeholder="Enter Full Name "
+           required>
+        </div>
+
+        <div class="details">
+            <label for="email">Email :</label>
+            <input type="text" class="form-details" id="email" name="email" placeholder="Enter email address"
+            required>
+         </div>
+
+        <div class="details">
+            <label for="password">Password :</label>
+            <input type="password" class="form-details" id="password" name="password" placeholder="Enter password"
+            required>
+         </div>
+         <div class="details">
+            <button type="submit" class="submit"> Sign Up</button>
+         </div>
+    </form>
+    <div class="signup">Already have an account? <a href="/login">Login</a></div>
+    <%- include('./partials/footer') %>
+</body>
+    

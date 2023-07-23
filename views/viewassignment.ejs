@@ -1,0 +1,18 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Your Assignments</div>
+        <button> <a href="/assignment">+New Assignment</a></button>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/assignments">Assignments</a>/ Your Assignment</div>
+
+     <div class="dotcovering">
+        <% const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
+        <div class="course"> Course : <%= assignmentdata.course %> </div>
+     <div class="assignment">Assignment :<%= assignmentdata.assignment %></div>
+     <div class="duedate">DueDate : <%= (assignmentdata.duedate).toLocaleDateString(undefined, options)%></div>
+    </div>
+    
+</div>
+

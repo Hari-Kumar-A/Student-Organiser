@@ -1,0 +1,45 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Delete Assignment</div>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/assignments">Assignments</a>/ Delete  Assignment</div>
+
+    
+
+    
+    <form action="/assignments/delete/<%= assignmentdata._id %>?_method=delete" method="post" class="assignmentform">
+        <div class="details">
+           <label for="course">Course :</label>
+           <input type="text" class="form-details" id="course" name="course" value="<%= assignmentdata.course %>" placeholder="Enter The Course Name"
+           required>
+        </div>
+    
+        <div class="details">
+            <label for="assignment">Assignment :</label>
+            <textarea name="assignment" id="assignment" cols="30" rows="10"><%= assignmentdata.assignment %></textarea> 
+         </div>
+    
+         <div class="details">
+             
+            <% const originalDateString = assignmentdata.duedate;
+            const originalDate = new Date(originalDateString);
+            const year = originalDate.getUTCFullYear();
+            const month = String(originalDate.getUTCMonth() + 1).padStart(2, "0");
+            const day = String(originalDate.getUTCDate()).padStart(2, "0");
+            const formattedDate = `${year}-${month}-${day}`; %>
+
+            <label for="duedate">Due Date :</label>
+            <input type="date" class="form-details" id="duedate" name="duedate"value="<%=formattedDate  %>" placeholder="Enter The Due Date"
+            required>
+         </div>
+    
+         <div class="details">
+            <button type="submit" class="submit" id="deletesubmit"> Delete Assignment</button>
+         </div>
+    </form>
+    
+    </div>
+    
+    

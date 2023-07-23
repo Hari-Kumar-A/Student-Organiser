@@ -1,0 +1,58 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Your Events and Classes</div>
+        <form action="/events/search" role="search" method="post" class="search">
+            <input type="search" name="searchevent" class="searchinput" placeholder="Search by Event/Class.." aria-label="Search">
+        </form>
+        <button> <a href="/events/addevent">+New Event</a></button>
+        <button> <a href="/events/calendarevent">Calendar View</a></button>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / Events & Classes</div>
+
+    <div class="assignmenttable">
+    <table>
+        <thead>
+        <tr>
+          <th >Event/Class</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Manage Events</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% function converter(date){
+        const formattedDate = date.toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        });
+        const formattedTime = date.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        });
+        const formattedDateTime = `${formattedDate}, ${formattedTime}`
+        return formattedDateTime }%>
+        <% eventsdata.forEach(element => { %>
+            <tr>
+                <td><%= element.event %></td>
+                <td><%= converter((element.startdate) ) %></td>
+                <td><%= converter((element.enddate))  %></td>
+                <td>
+                    <div class="buttons">
+                        <a href="/events/view/<%= element._id %>" >View</a>
+                        <a href="/events/edit/<%= element._id %>">Edit</a>
+                        <a href="/events/delete/<%= element._id %>">Delete</a>
+                </div>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+        
+      </table>
+    </div>
+</div>
+

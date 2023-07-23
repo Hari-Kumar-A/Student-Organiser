@@ -1,0 +1,49 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Your Assignments</div>
+        <form action="/assignments/search" role="search" method="post" class="search">
+            <input type="search" name="searchassignment" class="searchinput" placeholder="Search by Assignment/Course.." aria-label="Search">
+        </form>
+        <button> <a href="/assignments/assignment">+New Assignment</a></button>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/assignments">All Assignments</a> /Searched Assignment </div>
+
+    <% if(searchassignmentdata!=''){ %>
+    <div class="assignmenttable">
+    <table>
+        <thead>
+        <tr>
+          <th >Course</th>
+          <th>Assignment</th>
+          <th>Due Date</th>
+          <th>Manage Assignment</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% searchassignmentdata.forEach(element => { %>
+            <tr>
+                <td><%= element.course %></td>
+                <td><%= element.assignment %></td>
+                <td><%= (element.duedate).toLocaleDateString() %></td>
+                <td>
+                    <div class="buttons">
+                        <a href="/assignments/view/<%= element._id %>" >View</a>
+                        <a href="/assignments/edit/<%= element._id %>">Edit</a>
+                        <a href="/assignments/delete/<%= element._id %>">Delete</a>
+                </div>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+        
+      </table>
+    </div>
+    <% }else{ %>
+        <h2> There is no assignment/course on this</h2>
+        <% } %>
+     
+</div>
+

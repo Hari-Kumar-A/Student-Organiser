@@ -1,0 +1,58 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Delete Event/Class</div>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/events">Events</a> / Delete Event/Class</div>
+    
+    
+    <form action="/events/delete/<%= eventdata._id %>?_method=DELETE" method="post" class="assignmentform">
+
+
+        
+        <%  function converter(dateTimeStringUTC) 
+        { // Create a new Date object from the UTC date and time string 
+            const dateTimeUTC = new Date(dateTimeStringUTC); 
+            // Convert UTC time to IST (add 5 hours and 30 minutes) d
+            dateTimeUTC.setHours(dateTimeUTC.getHours() ); 
+            dateTimeUTC.setMinutes(dateTimeUTC.getMinutes() ); // Extract the individual date and time components 
+            const year = dateTimeUTC.getFullYear();
+             const month = String(dateTimeUTC.getMonth() + 1).padStart(2, '0'); 
+            const day = String(dateTimeUTC.getDate()).padStart(2, '0'); 
+            const hours = String(dateTimeUTC.getHours()).padStart(2, '0'); 
+            const minutes = String(dateTimeUTC.getMinutes()).padStart(2, '0'); 
+            // Format the date and time components into the desired string format 
+            const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`; 
+            return formattedDateTime; } %>
+
+
+        <div class="details">
+           <label for="event">Event/Class :</label>
+           <input type="text" class="form-details" id="event" name="event" value="<%= eventdata.event %>" placeholder="Enter the Event/Class Name"
+           required>
+        </div>
+
+     
+ 
+        <div class="details">
+            <label for="startdate">Start Date and Time:</label>
+            <input type="datetime-local" class="form-details" id="date" name="startdate" value="<%=converter(`${eventdata.startdate}`)  %>"
+            required>
+          </div>
+
+         <div class="details">
+            <label for="enddate">End Date and Time :</label>
+            <input type="datetime-local" class="form-details" id="date" name="enddate" value="<%=converter(`${eventdata.enddate}`)  %>"
+            required>
+         </div>
+    
+
+         <div class="details">
+            <button type="submit" class="submit" id="deletesubmit"> Delete Event</button>
+         </div>
+    </form>
+    
+    </div>
+    
+    

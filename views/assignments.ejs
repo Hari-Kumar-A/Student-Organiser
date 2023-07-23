@@ -1,0 +1,45 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Your Assignments</div>
+        <form action="/assignments/search" role="search" method="post" class="search">
+            <input type="search" name="searchassignment" class="searchinput" placeholder="Search by Assignment/Course.." aria-label="Search">
+        </form>
+        <button> <a href="/assignments/assignment">+New Assignment</a></button>
+        <button> <a href="/assignments/calendarassignment">Calendar View</a></button>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / Assignments</div>
+
+    <div class="assignmenttable">
+    <table>
+        <thead>
+        <tr>
+          <th >Course</th>
+          <th>Assignment</th>
+          <th>Due Date</th>
+          <th>Manage Assignment</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% assignmentsdata.forEach(element => { %>
+            <tr>
+                <td><%= element.course %></td>
+                <td><%= element.assignment %></td>
+                <td><%= (element.duedate).toLocaleDateString() %></td>
+                <td>
+                    <div class="buttons">
+                        <a href="/assignments/view/<%= element._id %>" >View</a>
+                        <a href="/assignments/edit/<%= element._id %>">Edit</a>
+                        <a href="/assignments/delete/<%= element._id %>">Delete</a>
+                </div>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+        
+      </table>
+    </div>
+</div>
+
