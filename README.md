@@ -28,14 +28,14 @@ npm install
 2.
 
 ```bash
-copy env.example.ts .env
+copy .env.example   .env
 ```
 and make any necessary changes.
 
 3.
 
 ```bash
-copy keys.json.example keys.json
+copy keys.json.example   keys.json
 ```
 and make any necessary changes.
 
@@ -51,10 +51,12 @@ The server should be running at your 127.0.0.1 port 3002 (or the port specified 
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/) \
 [Ejs](https://ejs.co/) \
 [CSS](https://www.w3schools.com/cssref/index.php) \ 
-[Express Js](https://expressjs.com/)
-[Mongoose](https://mongoosejs.com/docs/)
-[Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript
-/) 
+[Express Js](https://expressjs.com/) \
+[Mongoose](https://mongoosejs.com/docs/)\
+[Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) \
+[Bcrypt](https://www.npmjs.com/package/bcrypt/) \
+
+
 
 ## ScreenShots
 <img width="959" alt="image" src="https://github.com/Hari-Kumar-A/Student-Organiser/assets/125040587/ed27baac-6f48-44b3-9e1b-e932a553dd58">
