@@ -1,4 +1,4 @@
-/* Reset some default styles */
+ 
 * {
     margin: 0;
     padding: 0;
@@ -54,8 +54,9 @@ h1 {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid  #333;
+    border: 3px solid  #333;
     border-radius: 5px;
+    background-image: linear-gradient(to right, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd, #cde0bd);
 }
 
 .details {

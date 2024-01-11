@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudentHub</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="favicon.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-
-<body>
+  <body>
     <%- include('../partials/header') %>
-        <div class="content">
-            <%- include('../partials/sidebar') %>
-                <%- body %>
-        </div>
-
-</body>
-
+    <div class="content"><%- include('../partials/sidebar') %> <%- body %></div>
+  </body>
+  <%- include('../partials/commonfooter') %>
 </html>

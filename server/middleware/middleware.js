@@ -1,8 +1,6 @@
-module.exports.isAuthenticated = (req, res, next) => {
-    console.log(req.session.studentId)
+module.exports.isAuthenticated = (req, res, next) => { 
     if (req.session.studentId) {
-      // User is authenticated, proceed to the next middleware or route handler
-    //   console.log(req.session.studentId)
+      // User is authenticated, proceed to the next middleware or route handler 
       return next();
     } else {
       // User is not authenticated, redirect to the login page or display an error message

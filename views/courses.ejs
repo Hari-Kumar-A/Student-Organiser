@@ -1,0 +1,52 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Courses</div>
+    <button><a href="/courses/addcourse">+New Course</a></button>
+  </div>
+
+  <div class="link"><a href="/">Dashboard</a> / Courses</div>
+
+  <div class="assignmenttable">
+    <table>
+      <thead>
+        <tr>
+          <th>Courses</th>
+          <th>Credits</th>
+          <th>Grade</th>
+          <th>Manage Courses</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% let totalCredits = 0; %> <% let totalGradePoints = 0; %> <%
+        coursesdata.forEach(element => { %>
+        <tr>
+          <td><%= element.course %></td>
+          <td><%= element.credit %></td>
+          <td><%= element.grade %></td>
+          <td>
+            <div class="buttons">
+              <a href="/courses/edit/<%= element._id %>">Edit</a>
+              <a href="/courses/delete/<%= element._id %>">Delete</a>
+            </div>
+          </td>
+        </tr>
+        <% totalCredits += element.credit; %> <% switch (element.grade) { case
+        'S': totalGradePoints += 10 * element.credit; break; case 'A':
+        totalGradePoints += 9 * element.credit; break; case 'B':
+        totalGradePoints += 8 * element.credit; break; case 'C':
+        totalGradePoints += 7 * element.credit; break; case 'D':
+        totalGradePoints += 6 * element.credit; break; case 'E':
+        totalGradePoints += 5 * element.credit; break; case 'F':
+        totalGradePoints += 4 * element.credit; break; default:
+        totalGradePoints+=0;break; } %> <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% if (totalCredits > 0) { %> <% const gpa = totalGradePoints / totalCredits;
+  %>
+  <p>GPA: <%= gpa.toFixed(2) %></p>
+  <% } else { %>
+  <div class="gpa">GPA: N/A</div>
+  <% } %>
+</div>

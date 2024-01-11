@@ -1,0 +1,28 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">New Category </div>
+    </div>
+
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/expenses/categorylimits"> Category Limits</a> / New
+        Category</div>
+
+    <form action="/expenses/categorylimits/addcategorylimit" method="post" class="assignmentform">
+        <div class="details">
+            <label for="category">Category :</label>
+            <input type="text" class="form-details" id="category" name="category" placeholder="Enter The Category Name"
+                required>
+        </div>
+
+        <div class="details">
+            <label for="categorylimit">Budget Limit :</label>
+            <input type="number" class="form-details" id="categorylimit" name="categorylimit"
+                placeholder="Enter the Budget limit" required>
+        </div>
+
+        <div class="details">
+            <button type="submit" class="submit" id="addsubmit"> Add Category</button>
+        </div>
+    </form>
+
+</div>

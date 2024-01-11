@@ -1,0 +1,84 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Student Blogs</div>
+    <form action="/blogs/search" role="search" method="post" class="search">
+      <input
+        type="search"
+        name="searchblog"
+        class="searchinput"
+        placeholder="Search by Title/Author"
+        aria-label="Search"
+      />
+    </form>
+
+    <button><a href="/blogs/addblog">+Add Blog</a></button>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/blogs">Student Blogs</a> / Searched
+    Blogs
+  </div>
+  <% if(searchblogdata!=''){ %>
+  <div class="blog-container">
+    <% searchblogdata.forEach(blog => { %>
+    <div class="blog-card">
+      <h2><%= blog.title %></h2>
+      <p><%= blog.content.substring(0, 100) %></p>
+      <p class="author">By-<%= blog.author %></p>
+      <div class="blog-buttons">
+        <a href="/blogs/view/<%=blog._id %>" class="read-button">Read</a>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% }else{ %>
+  <h2>There are blog based on searched title or author</h2>
+  <% } %>
+</div>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+
+  .author {
+    text-align: left;
+  }
+
+  .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .blog-card {
+    width: 300px;
+
+    border: 1px solid #ccc;
+    background-color: rgb(174, 225, 239);
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 9.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .blog-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+
+  .read-button {
+    color: rgb(2, 2, 2);
+    margin-top: 5px;
+    text-align: right;
+  }
+
+  .delete-button {
+    color: red;
+    margin-top: 5px;
+    text-align: right;
+  }
+</style>

@@ -4,18 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Student Hub</title>
     <link rel="stylesheet" href="/authentication.css">
+    <link rel="icon" type="image/png" href="favicon.webp"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
 
     <%- include('./partials/headerauthentication') %>
 
-    <h1>Login</h1>
-
- 
-   
+    <h1>Login</h1> 
     
     <form action="login" method="post" class="assignmentform">
         <div class="details">
@@ -35,7 +33,7 @@
     </form>
     <div class="signup">Don't have an account yet? <a href="/register">Register</a></div>
     </div>
-    <%- include('./partials/footer') %>
+    <%- include('./partials/commonfooter') %>
     <script>
         window.onload = function() {
           if (typeof window.history.pushState === 'function') {

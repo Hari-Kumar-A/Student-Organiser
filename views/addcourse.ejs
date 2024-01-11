@@ -1,0 +1,40 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">New Course </div>
+    </div>
+
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/courses"> Courses</a> / New Course</div>
+
+    <form action="/courses/addcourse" method="post" class="assignmentform">
+        <div class="details">
+            <label for="course">Course :</label>
+            <input type="text" class="form-details" id="course" name="course" placeholder="Enter The Course Name"
+                required>
+        </div>
+
+        <div class="details">
+            <label for="credit">Credit :</label>
+            <input type="number" class="form-details" id="credit" name="credit" placeholder="Enter the Course Credits"
+                required>
+        </div>
+
+        <div class="details">
+            <select name="grade" class="form-details">
+                <option value="">Select a grade</option>
+                <option value="A">S</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+            </select>
+        </div>
+
+        <div class="details">
+            <button type="submit" class="submit" id="addsubmit"> Add Course</button>
+        </div>
+    </form>
+
+</div>

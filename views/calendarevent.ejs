@@ -13,13 +13,12 @@
     </div>
 </body>
 <script>
-    const events = JSON.parse('<%- eventsJSON %>');
-    console.log(events)
+    const events = JSON.parse('<%- eventsJSON %>'); 
     document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2023-07-07',
+      initialDate: '2024-01-17',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',

@@ -1,0 +1,60 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Add Expense</div>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/expenses">Expenses</a>/ Add Expense
+  </div>
+
+  <form action="addexpense" method="post" class="assignmentform">
+    <div class="details">
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <% categorydata.forEach(element=> { %>
+        <option value="<%=element.category %>"><%=element.category %></option>
+        <% }) %>
+      </select>
+    </div>
+
+    <div class="details">
+      <label for="expense">Expense :</label>
+      <input
+        type="text"
+        class="form-details"
+        id="expense"
+        name="expense"
+        placeholder="Enter The Expense Name"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <label for="expsense">Amount :</label>
+      <input
+        type="number"
+        class="form-details"
+        id="amount"
+        name="amount"
+        placeholder="Enter The Amount"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <label for="date"> Date :</label>
+      <input
+        type="date"
+        class="form-details"
+        id="date"
+        name="date"
+        placeholder="Enter The Date"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <button type="submit" class="submit" id="addsubmit">Add Expense</button>
+    </div>
+  </form>
+</div>

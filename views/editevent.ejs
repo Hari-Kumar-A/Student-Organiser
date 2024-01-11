@@ -1,10 +1,10 @@
 <div class="covering">
 
     <div class="dashboard">
-        <div class="heading">Edit Event/Class</div>
+        <div class="heading">Edit Event </div>
     </div>
     
-    <div class="link"> <a href="/">Dashboard</a> / <a href="/events">Events</a> / Edit Event/Class</div>
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/events">Events</a> / Edit Event </div>
     
     <form action="/events/edit/<%= eventdata._id %>?_method=put" method="post" class="assignmentform">
 
@@ -26,7 +26,7 @@
 
 
         <div class="details">
-           <label for="event">Event/Class :</label>
+           <label for="event">Event:</label>
            <input type="text" class="form-details" id="event" name="event" value="<%= eventdata.event %>" placeholder="Enter the Event/Class Name"
            required>
         </div>

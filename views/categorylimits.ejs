@@ -1,0 +1,43 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Expense Category & Limit</div>
+
+    <button>
+      <a href="/expenses/categorylimits/addcategorylimit">+New Category</a>
+    </button>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/expenses">Expenses</a> / Category
+    Budget Limits
+  </div>
+
+  <div class="assignmenttable">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Budget Limit</th>
+          <th>Manage Category</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% categorylimitsdata.forEach(element => { %>
+        <tr>
+          <td><%= element.category %></td>
+          <td><%= element.categorylimit %></td>
+          <td>
+            <div class="buttons">
+              <a href="/expenses/categorylimits/edit/<%= element._id%>">Edit</a>
+              <a href="/expenses/categorylimits/delete/<%= element._id%>"
+                >Delete</a
+              >
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

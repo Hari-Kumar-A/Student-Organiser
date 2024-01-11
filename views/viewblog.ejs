@@ -1,0 +1,24 @@
+<div class="blogscovering">
+  <div class="dashboard">
+    <div class="heading">View Blog</div>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/blogs">Blogs</a> / <%=blogdata.title
+    %>
+  </div>
+
+  <div class="blogcovering">
+    <div class="blog-details">
+      <% const options = { weekday: 'long', year: 'numeric', month: 'long', day:
+      'numeric' }; %>
+
+      <h2><%= blogdata.title %></h2>
+      <div class="author">By <%=blogdata.author %></div>
+      <div class="content"><%= blogdata.content %></div>
+      <div class="duedate">
+        Date : <%= (blogdata.date).toLocaleDateString(undefined, options) %>
+      </div>
+    </div>
+  </div>
+</div>

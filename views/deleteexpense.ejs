@@ -1,0 +1,65 @@
+<div class="covering">
+
+    <div class="dashboard">
+        <div class="heading">Delete Expense</div>
+    </div>
+    
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/expenses">Expenses</a>/ Delete  Expense</div>
+ 
+    <form action="/expenses/delete/<%= expensedata._id %>?_method=delete" method="post" class="assignmentform">
+
+        <div class="details">
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="Tuition Fees" <% if (expensedata.category === 'Tuition Fees') { %>selected<% } %>>Tuition Fees</option>
+              <option value="Books and Study Materials" <% if (expensedata.category === 'Books and Study Materials') { %>selected<% } %>>Books and Study Materials</option>
+              <option value="Accommodation" <% if (expensedata.category === 'Accommodation') { %>selected<% } %>>Accommodation</option>
+              <option value="Food and Meals" <% if (expensedata.category === 'Food and Meals') { %>selected<% } %>>Food and Meals</option>
+              <option value="Transportation" <% if (expensedata.category === 'Transportation') { %>selected<% } %>>Transportation</option>
+              <option value="Personal Expenses" <% if (expensedata.category === 'Personal Expenses') { %>selected<% } %>>Personal Expenses</option>
+              <option value="Entertainment and Recreation" <% if (expensedata.category === 'Entertainment and Recreation') { %>selected<% } %>>Entertainment and Recreation</option>
+              <option value="Health and Medical Expenses" <% if (expensedata.category === 'Health and Medical Expenses') { %>selected<% } %>>Health and Medical Expenses</option>
+              <option value="Technology" <% if (expensedata.category === 'Technology') { %>selected<% } %>>Technology</option>
+              <option value="Stationery and Supplies" <% if (expensedata.category === 'Stationery and Supplies') { %>selected<% } %>>Stationery and Supplies</option>
+              <option value="Extracurricular Activities" <% if (expensedata.category === 'Extracurricular Activities') { %>selected<% } %>>Extracurricular Activities</option>
+              <option value="Travel and Trips" <% if (expensedata.category === 'Travel and Trips') { %>selected<% } %>>Travel and Trips</option>
+              <option value="Insurance" <% if (expensedata.category === 'Insurance') { %>selected<% } %>>Insurance</option>
+              <option value="Communication" <% if (expensedata.category === 'Communication') { %>selected<% } %>>Communication</option>
+              <option value="Membership Fees" <% if (expensedata.category === 'Membership Fees') { %>selected<% } %>>Membership Fees</option>
+            </select>
+          </div>
+          
+          <div class="details">
+            <label for="expense">Expense :</label>
+            <input type="text" class="form-details" id="expense" name="expense" value="<%= expensedata.expense %>" placeholder="Enter The Expense Name"
+            required>
+         </div>
+
+        <div class="details">
+            <label for="expsense">Amount :</label>
+            <input type="number" class="form-details" id="amount" name="amount" value="<%= expensedata.amount %>" placeholder="Enter The Amount"
+            required>
+         </div>
+
+         <div class="details">
+            <% const originalDateString = expensedata.date;
+            const originalDate = new Date(originalDateString);
+            const year = originalDate.getUTCFullYear();
+            const month = String(originalDate.getUTCMonth() + 1).padStart(2, "0");
+            const day = String(originalDate.getUTCDate()).padStart(2, "0");
+            const formattedDate = `${year}-${month}-${day}`; %>
+
+            <label for="date"> Date :</label>
+            <input type="date" class="form-details" id="date" name="date"value="<%=formattedDate  %>" placeholder="Enter The Date"
+            required>
+         </div>
+    
+         <div class="details">
+            <button type="submit" class="submit" id="deletesubmit"> Delete Expense</button>
+         </div>
+    </form>
+    
+    </div>
+    
+    

@@ -1,0 +1,62 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Your Expenses</div>
+    <form action="/expenses/search" role="search" method="post" class="search">
+      <input
+        type="search"
+        name="searchexpense"
+        class="searchinput"
+        placeholder="Search by Category.."
+        aria-label="Search"
+      />
+    </form>
+    <button><a href="/expenses/addexpense">+New Expense</a></button>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/expenses">All Expenses</a> /Searched
+    Expenses
+  </div>
+
+  <% if(searchexpensedata!=''){ %>
+  <div class="assignmenttable">
+    <table>
+      <thead>
+        <tr>
+          <th>Expense</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Manage Expenses</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% function converter(date){ const formattedDate =
+        date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit',
+        year: 'numeric' }); const formattedTime =
+        date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit',
+        hour12: true }); const formattedDateTime = `${formattedDate},
+        ${formattedTime}` return formattedDateTime }%> <%
+        searchexpensedata.forEach(element => { %>
+        <tr>
+          <td><%= element.expense %></td>
+          <td><%= element.category %></td>
+          <td><%= element.amount %> Rs</td>
+          <td><%= converter((element.date))%></td>
+          <td>
+            <div class="buttons">
+              <a href="/expenses/view/<%= element._id %>">View</a>
+              <a href="/expenses/edit/<%= element._id %>">Edit</a>
+              <a href="/expenses/delete/<%= element._id %>">Delete</a>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% }else{ %>
+  <h2>There are no expenses on this category</h2>
+  <% } %>
+</div>

@@ -1,0 +1,56 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Edit Blog</div>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/blogs/myblogs">My Blogs</a> / Edit
+    Blog
+  </div>
+
+  <form
+    action="/blogs/edit/<%=blogdata._id%>?_method=put"
+    method="post"
+    class="assignmentform"
+  >
+    <div class="details">
+      <label for="title">Title :</label>
+      <input
+        type="text"
+        class="form-details"
+        id="title"
+        name="title"
+        placeholder="Enter the Blog Title"
+        value="<%= blogdata.title %>"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <label for="content">Content :</label>
+
+      <textarea
+        name="content"
+        class="form-details"
+        id="content"
+        cols="60"
+        rows="2"
+        placeholder="Start writing.."
+        oninput="autoResize(this)"
+      >
+<%=blogdata.content %></textarea
+      >
+    </div>
+
+    <div class="details">
+      <button type="submit" class="submit" id="addsubmit">Edit Blog</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function autoResize(textarea) {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  }
+</script>

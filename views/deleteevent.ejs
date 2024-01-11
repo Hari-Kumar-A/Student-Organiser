@@ -1,10 +1,10 @@
 <div class="covering">
 
     <div class="dashboard">
-        <div class="heading">Delete Event/Class</div>
+        <div class="heading">Delete Event </div>
     </div>
     
-    <div class="link"> <a href="/">Dashboard</a> / <a href="/events">Events</a> / Delete Event/Class</div>
+    <div class="link"> <a href="/">Dashboard</a> / <a href="/events">Events</a> / Delete Event </div>
     
     
     <form action="/events/delete/<%= eventdata._id %>?_method=DELETE" method="post" class="assignmentform">
@@ -28,7 +28,7 @@
 
 
         <div class="details">
-           <label for="event">Event/Class :</label>
+           <label for="event">Event:</label>
            <input type="text" class="form-details" id="event" name="event" value="<%= eventdata.event %>" placeholder="Enter the Event/Class Name"
            required>
         </div>

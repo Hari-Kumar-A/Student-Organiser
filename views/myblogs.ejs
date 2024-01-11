@@ -1,0 +1,84 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Your Blogs</div>
+
+    <button class="stylebutton"><a href="/blogs">Student Blogs</a></button>
+    <button class="stylebutton"><a href="/blogs/addblog">+Add Blog</a></button>
+  </div>
+
+  <div class="link"><a href="/">Dashboard</a> / Your Blogs</div>
+  <div class="blog-container">
+    <% blogdata.forEach(blog => { %>
+    <div class="blog-card">
+      <h2><%= blog.title %></h2>
+      <p><%= blog.content.substring(0, 100) %></p>
+      <p class="author">By-<%= blog.author %></p>
+      <div class="blog-buttons">
+        <a href="/blogs/view/<%=blog._id %>" class="read-button">Read</a>
+        <a href="/blogs/edit/<%=blog._id %>" class="edit-button">Edit</a>
+        <a
+          href="/blogs/delete/<%=blog._id %>"
+          class="delete-button"
+          onclick="return confirm('Are you sure you want to delete this blog?')"
+          >Delete</a
+        >
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+
+  .author {
+    text-align: left;
+  }
+
+  .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .blog-card {
+    width: 300px;
+
+    border: 1px solid #ccc;
+    background-color: rgb(174, 225, 239);
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 9.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .blog-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+
+  .read-button {
+    color: rgb(2, 2, 2);
+    font-size: 1.2rem;
+    margin-top: 5px;
+    text-align: right;
+  }
+  .edit-button {
+    font-size: 1.2rem;
+    color: rgb(18, 133, 123);
+    margin-top: 5px;
+    text-align: right;
+  }
+
+  .delete-button {
+    font-size: 1.2rem;
+    color: red;
+    margin-top: 5px;
+    text-align: right;
+  }
+</style>

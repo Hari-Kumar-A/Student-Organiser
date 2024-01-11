@@ -1,0 +1,81 @@
+<div class="covering">
+  <div class="dashboard">
+    <div class="heading">Edit Expense</div>
+  </div>
+
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/expenses">Expenses</a>/ Edit Expense
+  </div>
+
+  <form
+    action="/expenses/edit/<%= expensedata._id %>?_method=put"
+    method="post"
+    class="assignmentform"
+  >
+    <div class="details">
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <% categorydata.forEach(element => { %> <% if (element.category ===
+        expensedata.category) { %>
+        <option value="<%= element.category %>" selected>
+          <%= element.category %>
+        </option>
+        <% } else { %>
+        <option value="<%= element.category %>"><%= element.category %></option>
+        <% } %> <% }) %>
+      </select>
+    </div>
+
+    <div class="details">
+      <label for="expense">Expense :</label>
+      <input
+        type="text"
+        class="form-details"
+        id="expense"
+        name="expense"
+        value="<%= expensedata.expense %>"
+        placeholder="Enter The Expense Name"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <label for="amount">Amount :</label>
+      <input
+        type="number"
+        class="form-details"
+        id="amount"
+        name="amount"
+        value="<%= expensedata.amount %>"
+        placeholder="Enter The Amount"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <% const originalDateString = expensedata.date; const originalDate = new
+      Date(originalDateString); const year = originalDate.getUTCFullYear();
+      const month = String(originalDate.getUTCMonth() + 1).padStart(2, "0");
+      const day = String(originalDate.getUTCDate()).padStart(2, "0"); const
+      formattedDate = `${year}-${month}-${day}`; %>
+
+      <label for="date"> Date :</label>
+      <input
+        type="date"
+        class="form-details"
+        id="date"
+        name="date"
+        value="<%=formattedDate  %>"
+        placeholder="Enter The Date"
+        required
+      />
+    </div>
+
+    <div class="details">
+      <button type="submit" class="submit" id="updatesubmit">
+        Update Expense
+      </button>
+    </div>
+  </form>
+</div>
