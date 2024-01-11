@@ -1,6 +1,17 @@
-# Student-Organiser
-Student Organiser , a student-friendly application for academic needs.
+# Student-Organiser 
+### Student Organiser , a student-friendly application for academic needs.
 
+ ### :hammer_and_wrench: Tech Stack :
+<div>
+   <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png"  title="EJS" alt="EJS" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original.svg" title="Mongodb" alt="Mongodb" width="40" height="40"/>&nbsp; 
+  <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp; 
+  <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original.svg" title="Expres" alt="Express" width="40" height="40"/>&nbsp;    
+</div>
+ 
+---
 # Features
 1) Authentication System
 2) Usage of Express Session
@@ -25,36 +36,39 @@ Clone the repository and fork to your local machine
 npm install
 ```
 
-2.
+2. Setup env file
 
 ```bash
 copy .env.example   .env
 ```
 and make any necessary changes.
 
-3.
+3. Setup keys.json file
 
 ```bash
 copy keys.json.example   keys.json
 ```
 and make any necessary changes.
 
-3. Run
+4. Getting Started
 
 ```bash
-npm start
+$ git clone https://github.com/Hari-Kumar-A/Student-Organiser.git
+$ cd Student-Organiser/
+$ npm install
+$ npm start 
 ```
 
 The server should be running at your 127.0.0.1 port 3002 (or the port specified in `.env`).
 
 ## Resources
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/) \
-[Ejs](https://ejs.co/) \
-[CSS](https://www.w3schools.com/cssref/index.php) \ 
-[Express Js](https://expressjs.com/) \
+[EJS](https://ejs.co/) \
+[CSS](https://www.w3schools.com/cssref/index.php/) \
 [Mongoose](https://mongoosejs.com/docs/)\
+[Express Js](https://expressjs.com/) \
 [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) \
-[Bcrypt](https://www.npmjs.com/package/bcrypt/) \
+[Bcrypt](https://www.npmjs.com/package/bcrypt/) 
 
 
 
