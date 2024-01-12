@@ -51,6 +51,7 @@ copy .env.example   .env
 ```bash
 copy keys.json.example   keys.json
 ```
+6. Make sure, mongoDB is installed and is connected.
  
 
  
