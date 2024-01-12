@@ -58,6 +58,8 @@ copy keys.json.example   keys.json
 
 The server should be running at your 127.0.0.1 port 3002 (or the port specified in `.env`).
 
+ ---
+
 ## Resources
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/) \
 [EJS](https://ejs.co/) \
@@ -66,6 +68,61 @@ The server should be running at your 127.0.0.1 port 3002 (or the port specified 
 [Express Js](https://expressjs.com/) \
 [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) \
 [Bcrypt](https://www.npmjs.com/package/bcrypt/) 
+
+## Contributing Guidelines
+1. Add a reference to the original repository.
+``` bash
+https://github.com/Hari-Kumar-A/Student-Organiser
+```
+2. Check the remotes for this repository.
+``` bash
+git remote -v
+```
+3. Always take a pull from the upstream repository to your main branch to keep it at par with the main project(updated repository).
+``` bash
+git pull upstream main
+```
+4. Once the issue is assigned.
+   Create a new branch (DO NOT name it MAIN or MASTER or anything random). like to enhance blogs,it can be "enhanceBlog"
+``` bash
+git checkout -b <your_branch_name>
+```
+5. Perfom your desired changes to the code base.
+   - Make sure that you do not change any code unrelated to the task that you have been assigned
+   - Do not mess up the directory structure
+   - Preview your changes and test them properly before proceding ahead
+6. Track your changes:
+```bash
+git add.
+```
+7. Commit your changes:
+```bash
+git commit -m "Relevant message"  (usually title of the pull request)
+```
+8. Push the committed changes in your feature branch to your remote repo:
+``` bash
+git push -u origin <your_branch_name>
+```
+9. To create a pull request, click on compare and pull requests. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
+<img width="313" alt="image" src="https://github.com/Hari-Kumar-A/Student-Organiser/assets/125040587/c5e53d38-6868-43b5-8057-839cb10c2448">
+
+10. Add an appropriate title and description to your pull request that explains your changes and efforts done.
+11. Click on
+ ```bash
+Create Pull Request
+```
+12. Make sure to refer the respective issue in the respective PR using phrases like Resolves #issue_number or Fixes #issue_number. Here's an example to raise a PR:
+``` bash
+ Fixes #2
+
+# Work Done:
+- Fixed blog page
+- Made the Favicon more optimized
+- ...
+# Relevant Screenshots
+```
+13.  Hurray ❗ You have made a PR to the awesome Student Organiser project 💥 . Wait your PR to be reviewed. 
+
 
 
 
