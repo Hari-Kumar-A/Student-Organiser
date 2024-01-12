@@ -36,14 +36,14 @@ Clone the repository and fork to your local machine
 npm install
 ```
 
-2. Setup env file
+2. Setup env file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
 
 ```bash
 copy .env.example   .env
 ```
 and make any necessary changes.
 
-3. Setup keys.json file
+3. Setup keys.json file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
 
 ```bash
 copy keys.json.example   keys.json
