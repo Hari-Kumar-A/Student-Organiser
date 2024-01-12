@@ -67,15 +67,15 @@ module.exports.posteditpage = async (req, res) => {
 
 //deleting a course
 module.exports.deletepage = async (req, res) => {
-  try {
-    const coursedata = await coursemodel.findOne({ _id: req.params.id });
+  try { 
+    const coursedata = await coursemodel.findOne({ _id: req.params.id });   
     res.render("deletecourse", { coursedata });
   } catch (error) { 
     res.status(500).send("An error occurred while deleting courses data.");
   }
 };
 module.exports.postdeletepage = async (req, res) => {
-  try {
+  try { 
     await coursemodel.deleteOne({ _id: req.params.id });
     res.redirect("/courses");
   } catch (error) { 

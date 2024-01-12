@@ -3,39 +3,44 @@
     <div class="dashboard">
         <div class="heading">Delete Course</div>
     </div>
-
+    
     <div class="link"> <a href="/">Dashboard</a> / <a href="/courses">Courses</a>/ Delete Course</div>
- 
+
+    
+
+    
     <form action="/courses/delete/<%=coursedata._id%>?_method=delete" method="post" class="assignmentform">
         <div class="details">
-            <label for="course">Course :</label>
-            <input type="text" class="form-details" id="course" name="course" value="<%= coursedata.course %>"
-                placeholder="Enter The Course Name" required>
+           <label for="course">Course :</label>
+           <input type="text" class="form-details" id="course" name="course" value="<%= coursedata.course %>" placeholder="Enter The Course Name"
+           required>
         </div>
-
+    
         <div class="details">
             <label for="credit">Credits :</label>
-            <input type="number" class="form-details" id="credit" name="credit" value="<%= coursedata.credit %>"
-                placeholder="Enter the Credits" required>
-        </div>
-
-        <div class="details">
+            <input type="number" class="form-details" id="credit" name="credit" value="<%= coursedata.credit %>" placeholder="Enter the Credits"
+            required>
+         </div>
+    
+         <div class="details">
             <label for="grade">Grade:</label>
-            <select id="grade" name="grade" class="form-details">
+            <select id="grade" name="grade"   class="form-details">
                 <option value="">Select a grade</option>
-                <option value="S" <% if (coursedata.grade==='S' ) { %>selected<% } %>>S</option>
-                <option value="A" <% if (coursedata.grade==='A' ) { %>selected<% } %>>A</option>
-                <option value="B" <% if (coursedata.grade==='B' ) { %>selected<% } %>>B</option>
-                <option value="C" <% if (coursedata.grade==='C' ) { %>selected<% } %>>C</option>
-                <option value="D" <% if (coursedata.grade==='D' ) { %>selected<% } %>>D</option>
-                <option value="E" <% if (coursedata.grade==='E' ) { %>selected<% } %>>E</option>
-                <option value="F" <% if (coursedata.grade==='F' ) { %>selected<% } %>>F</option>
+                <option value="S" <% if (coursedata.grade === 'S') { %>selected<% } %>>S</option>
+                <option value="A" <% if (coursedata.grade === 'A') { %>selected<% } %>>A</option>
+                <option value="B" <% if (coursedata.grade === 'B') { %>selected<% } %>>B</option>
+                <option value="C" <% if (coursedata.grade === 'C') { %>selected<% } %>>C</option>
+                <option value="D" <% if (coursedata.grade === 'D') { %>selected<% } %>>D</option>
+                <option value="E" <% if (coursedata.grade === 'E') { %>selected<% } %>>E</option>
+                <option value="F" <% if (coursedata.grade === 'F') { %>selected<% } %>>F</option>
             </select>
         </div>
-
-        <div class="details">
+    
+         <div class="details">
             <button type="submit" class="submit" id="deletesubmit"> Delete Course </button>
-        </div>
+         </div>
     </form>
-
-</div>
+    
+    </div>
+    
+    
