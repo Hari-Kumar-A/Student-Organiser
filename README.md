@@ -28,36 +28,32 @@
  
 ## Installation and Setup
 
-Clone the repository and fork to your local machine
-
-1. Install the packages:
-
+1. Fork the Repo
+2. Clone the Repo:
+   
+```bash
+$ git clone https://github.com/Hari-Kumar-A/Student-Organiser.git 
+cd Student-Organiser/
+ ```
+3. Install the packages:
 ```bash
 npm install
 ```
 
-2. Setup env file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
+4. Setup env file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
 
 ```bash
 copy .env.example   .env
-```
-and make any necessary changes.
+``` 
 
-3. Setup keys.json file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
+5. Setup keys.json file, refer [Google-Calendar API Integration](https://stateful.com/blog/google-calendar-api-javascript/) 
 
 ```bash
 copy keys.json.example   keys.json
 ```
-and make any necessary changes.
+ 
 
-4. Getting Started
-
-```bash
-$ git clone https://github.com/Hari-Kumar-A/Student-Organiser.git
-$ cd Student-Organiser/
-$ npm install
-$ npm start 
-```
+ 
 
 The server should be running at your 127.0.0.1 port 3002 (or the port specified in `.env`).
 
@@ -75,6 +71,8 @@ The server should be running at your 127.0.0.1 port 3002 (or the port specified 
 ## ScreenShots
 <img width="959" alt="image" src="https://github.com/Hari-Kumar-A/Student-Organiser/assets/125040587/ed27baac-6f48-44b3-9e1b-e932a553dd58">
 <img width="959" alt="image" src="https://github.com/Hari-Kumar-A/Student-Organiser/assets/125040587/74b1cca7-a969-445f-b303-30036db91be3">
+<img width="587" alt="image" src="https://github.com/Hari-Kumar-A/Student-Organiser/assets/125040587/506a4c50-e504-43ab-ac11-944f01d0e173">
+
 
  
  
