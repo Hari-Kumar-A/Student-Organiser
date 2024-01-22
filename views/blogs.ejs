@@ -1,3 +1,5 @@
+<!-- viewblog.ejs -->
+
 <div class="covering">
   <div class="dashboard">
     <div class="heading">Student Blogs</div>
@@ -10,10 +12,15 @@
         aria-label="Search"
       />
     </form>
-    <button class="stylebutton"><a href="/blogs/myblogs">Your Blogs</a></button>
+    <button onclick="sortBlogs('newest')" id="newestButton" disabled>Sort by Newest</button>
+    <button onclick="sortBlogs('oldest')" id="oldestButton">Sort by Oldest</button>
+    <button><a href="/blogs/addblog">+Add Blog</a></button>
   </div>
 
-  <div class="link"><a href="/">Dashboard</a> / Blogs</div>
+  <div class="link">
+    <a href="/">Dashboard</a> / <a href="/blogs">Student Blogs</a> / Searched Blogs
+  </div>
+  
   <div class="blog-container">
     <% blogdata.forEach(blog => { %>
     <div class="blog-card">
@@ -44,7 +51,6 @@
 
   .blog-card {
     width: 300px;
-
     border: 1px solid #ccc;
     background-color: rgb(174, 225, 239);
     padding: 10px;
@@ -52,14 +58,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 9.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  
+    justify-content: space-between;
   }
 
   .blog-buttons {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;  
-    margin-top: auto;  
+    align-items: flex-end;
+    margin-top: auto;
   }
 
   .read-button {
@@ -74,3 +80,29 @@
     text-align: right;
   }
 </style>
+
+<script>
+  function sortBlogs(order) {
+    var newestButton = document.getElementById('newestButton');
+    var oldestButton = document.getElementById('oldestButton');
+
+    var blogContainer = document.querySelector('.blog-container');
+    var blogs = Array.from(blogContainer.children);
+
+    // Toggle sorting order
+    blogs.reverse();
+
+    blogContainer.innerHTML = ""; // Clear existing blogs
+
+    blogs.forEach(function (blog) {
+      blogContainer.appendChild(blog);
+    });
+
+    // Enable/disable buttons based on the sorting order
+    newestButton.disabled = order === 'newest';
+    oldestButton.disabled = order === 'oldest';
+  }
+</script>
+
+
+
